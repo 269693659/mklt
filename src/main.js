@@ -2,8 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
-Vue.config.productionTip = false
+import './components/index.js'
+import './unit/vant'
+import '@/api/axios'
+// Vue.config.productionTip = false
 
 new Vue({
   router,

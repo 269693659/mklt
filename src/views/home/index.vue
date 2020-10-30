@@ -1,26 +1,22 @@
 <template>
   <div class="page">
-      home
+    首页
+    <button @click="goticket">购票</button>
   </div>
 </template>
 
 <script>
 export default {
-  components: {
-
-  },
+  components: {},
   data() {
-    return {
-    };
+    return {};
   },
-  created() {
-
-  },
-  mounted() {
-
-  },
+  created() {},
+  mounted() {},
   methods: {
-
+    goticket(){
+      this.$router.push('/ticket/buy')
+    }
   },
 };
 </script>
