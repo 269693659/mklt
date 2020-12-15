@@ -2,8 +2,8 @@
   <div class="page">
      <span @click="gologin" v-if="!token">登录 </span>
      <span v-else>个人中心   </span>
-     <span>中文   </span>
-     <span>en</span>
+     <span @click="lang('zh')" :class="{'active':$i18n.locale =='zh'}">中文</span>
+     <span @click="lang('en')" :class="{'active':$i18n.locale =='en'}">en</span>
   </div>
 </template>
 
@@ -29,7 +29,11 @@ export default {
   methods: {
     gologin(){
       this.$router.push('/login')
-    }
+    },
+    lang(val){
+      this.$i18n.locale = val
+      document.title=this.$t('home.title')
+    },
   },
 };
 </script>
@@ -37,5 +41,8 @@ export default {
 .page{
   height: 50px;
   line-height: 50px;
+  .active{
+    color: red;
+  }
 }
 </style>

@@ -1,0 +1,41 @@
+<div class="loading-div">
+  <div id="jump">跳过</div>
+  <img class="loading-logo" src="https://kmjs-mxh.oss-cn-shenzhen.aliyuncs.com/e41c16f12d8eb23e93cbbec84fd7d76.png" />
+  <img class="loading" src="https://kmjs-mxh.oss-cn-shenzhen.aliyuncs.com/kmlt_dh2.gif" />
+</div>
+
+<script>
+document.getElementById('jump').addEventListener('click', function() {
+  console.log(123)
+  window.$vm.$mount('#app')
+  clearTimeout(window.timer)
+})
+</script>
+
+<style scoped>
+.loading-div {
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  flex-direction: column;
+}
+.loading {
+  flex: 1;
+  width: 100%;
+}
+.logo-box {
+  width: 100%;
+  height: 90px;
+  background: #fff;
+}
+#jump {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+}
+.loading-logo {
+  width: 100%;
+  height: 55px;
+}
+</style>

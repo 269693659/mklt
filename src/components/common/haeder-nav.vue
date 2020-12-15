@@ -21,28 +21,12 @@ export default {
           path: "/news",
         },
         {
-          name: "新闻",
-          path: "/news",
+          name: "导入",
+          path: "/importFile",
         },
         {
-          name: "新闻",
-          path: "/news",
-        },
-        {
-          name: "新闻",
-          path: "/news",
-        },
-        {
-          name: "新闻",
-          path: "/news",
-        },
-        {
-          name: "新闻",
-          path: "/news",
-        },
-        {
-          name: "新闻",
-          path: "/news",
+          name: "表格",
+          path: "/table",
         },
       ],
     };

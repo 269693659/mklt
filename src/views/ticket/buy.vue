@@ -6,7 +6,8 @@
           <li v-for="item in ticketList" :key="item.id">
               <p>名称{{item.name}}</p>
               <p>价格：{{item.price}}</p>
-              <button @click="gobuy">购票</button>
+              <button v-if="item.buyNum >item.totalNum ">已售罄</button>
+              <button v-else @click="gobuy">购票</button>
           </li>
       </ul>
 
@@ -36,6 +37,9 @@ export default {
           }).then(res=>{
               this.ticketList=res.data
           })
+      },
+      gobuy(){
+          this.$router.push('/ticket/pay')
       }
   },
 };

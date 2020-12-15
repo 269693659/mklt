@@ -5,7 +5,7 @@ import router from '@/router';
 let instance = axios.create({
     baseURL: process.env.VUE_APP_BASEURL1,
     timeout: 60000,
-    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    headers: { 'X-Requested-With': 'XMLHttpRequest', channel: 3 }
 });
 instance.interceptors.request.use( (config)=>{
     // Do something before request is sent
@@ -35,7 +35,7 @@ instance.interceptors.response.use( (res)=> {
         })
         return;
     }else if(code!=0){
-        if(code=900){
+        if(code==999){
           store.commit('setToken','')
           store.commit('userInfo',null)
             router.replace({
@@ -44,8 +44,9 @@ instance.interceptors.response.use( (res)=> {
                     replace:router.currentRoute.fullPath
                 }
             })
+          alert('code:'+code,msg)
         }
-        alert(code,msg)
+        alert('code:'+code,msg)
     }else{
         return res;
     }
@@ -62,6 +63,7 @@ instance.interceptors.response.use( (res)=> {
           redirect: router.currentRoute.fullPath
         }
       })
+      alert('请登录')
     }
     switch (status) {
       case 400:

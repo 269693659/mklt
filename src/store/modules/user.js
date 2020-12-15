@@ -6,7 +6,8 @@ Vue.use(Vuex)
 const userModule = {
   state: {
       token:'',
-      userInfo:null
+      userInfo:null,
+      openId:'',
   },
   
   mutations: {
@@ -15,11 +16,15 @@ const userModule = {
     },
     userInfo(state,value){
       state.userInfo = value
+    },
+    setOpenId(state,value){
+      state.openId = value
     }
   },
   getters:{
     token:state=>state.token,
-    userInfo:state=>state.userInfo
+    userInfo:state=>state.userInfo,
+    openId:state=>state.openId
   },
   actions: {
   }
